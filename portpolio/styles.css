@@ -114,14 +114,14 @@ html {
 
 .profile-bg {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
+    left:60vw;
+
+    width: 50vh;
+    height: 50vh;
     background: url(profile.jpg);
     background-size: cover;
     opacity: 0.9;
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 30% 0);
+    border-radius: 50% 50% 50% 50%;
 }
 
 .home-content {
@@ -170,6 +170,53 @@ html {
     transition: all 0.3s ease;
 }
 
+.section-title1{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+
+
+
+}
+
+.section-title1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #4070f4;
+    border-radius: 2px;
+}
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #4070f4;
+    border-radius: 2px;
+}
+
+.about .section-title{
+    padding-right: 50vh;
+}
 .social-icons a:hover {
     color: #fff;
     background: #4070f4;
@@ -347,15 +394,20 @@ html {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
 }
 
 .contact .contact-content .column {
-    width: calc(50% - 30px);
+    width: 45%;
+    text-align: center;
 }
 
 .contact .contact-content .left p {
-    text-align: justify;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .contact .contact-content .left .icons {
@@ -366,10 +418,23 @@ html {
     display: flex;
     height: 65px;
     align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact .contact-content .row i {
+    width: 40px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .contact .contact-content .row .info {
-    margin-left: 30px;
+    margin-left: 20px;
+    text-align: left;
+    flex: 1;
 }
 
 .contact .contact-content .row .info .head {
@@ -382,6 +447,8 @@ html {
 
 .contact .right form .fields {
     display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .contact .right form .field,
@@ -389,6 +456,7 @@ html {
     height: 45px;
     width: 100%;
     margin-bottom: 15px;
+    max-width: 400px;
 }
 
 .contact .right form .field input,
@@ -416,6 +484,9 @@ html {
 .contact .right form .button {
     height: 47px;
     width: 170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .contact .right form .button button {
@@ -554,6 +625,13 @@ html {
     width: 100%;
     text-align: center;
 }
+.contact-content{
+    
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Responsive styles for Problem Solving section */
 @media (max-width: 768px) {
@@ -600,8 +678,9 @@ html {
     }
     
     .profile-bg {
-        width: 40%;
-        clip-path: polygon(100% 0, 100% 100%, 0 100%, 50% 0);
+        width: 30%;
+        height: 50%;
+        border-radius: 50% 50% 50% 50%;
     }
     
     .home-content {
@@ -730,9 +809,75 @@ html {
 
   .contact .contact-content {
     flex-direction: column;
-  }
+    align-items: center;
+}
+
+.contact .contact-content .column {
+    width: 100%;
+    max-width: 500px;
+}
 
   .certificate-track img {
     width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact .contact-content {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 15px;
+    gap: 30px;
+  }
+  .contact .contact-content .column {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  .contact .contact-content .left p,
+  .contact .contact-content .right {
+    text-align: center;
+  }
+  .contact .contact-content .row {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  .contact .contact-content .row i {
+    width: 35px;
+    font-size: 16px;
+  }
+  .contact .contact-content .row .info {
+    margin-left: 15px;
+  }
+  .contact .contact-content .row .info .head {
+    font-size: 14px;
+  }
+  .contact .contact-content .row .info .sub-title {
+    font-size: 13px;
+  }
+  .contact .right form .fields {
+    flex-direction: column;
+    gap: 0;
+  }
+  .contact .right form .field,
+  .contact .right form .fields .field {
+    max-width: 100%;
+    height: 40px;
+  }
+  .contact .right form .field input,
+  .contact .right form .textarea textarea {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  .contact .right form .textarea {
+    height: 70px;
+  }
+  .contact .right form .button {
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+  }
+  .contact .right form .button button {
+    font-size: 16px;
   }
 }
