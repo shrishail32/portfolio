@@ -7,7 +7,7 @@ AOS.init({
 
 // Typing Animation
 const typed = new Typed(".typing", {
-    strings: ["Java Developer", "Web Developer", "Full Stack Developer", "Designer","Problem Solver"],
+    strings: ["Java Developer", "Web Developer", "Full Stack Developer"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
